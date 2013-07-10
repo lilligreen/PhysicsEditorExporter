@@ -1,0 +1,94 @@
+<exporter>
+    
+    <!-- identifier of the exporter -->
+	<name>Torque2D</name>
+	
+	<!-- name for the dropbox -->
+    <displayName>Torque 2D (XML)</displayName>
+	
+	<!-- description of the exporter -->
+    <description>Exports TAML XML for T2D</description>
+	
+	<!-- exporter version -->
+	<version>1.0</version>
+	
+	<!-- direction of the y axis: up / down -->
+	<yAxisDirection>up</yAxisDirection>
+	
+	<!-- physics engine to use: box2d, chipmunk -->
+	<physicsEngine>box2d</physicsEngine>
+	
+	<!-- name of the template file -->
+    <template>template.taml</template>
+	
+	<!-- file exension for the data file -->
+	<fileExtension>taml</fileExtension>
+	
+	<!-- anchor point settings -->
+	<anchorPoint>
+	    <!-- are anchor points supported ? yes/no -->
+		<enabled>no</enabled>
+	</anchorPoint>
+
+    <origin>
+        <!--
+        origin (0/0) point of the polygons 
+        can be set to "anchorPoint" or "fixed"
+        Use 
+		<relX>0.5</relX>		
+		<relY>0.5</relY>
+		to specify a fixed origin.
+		Default is 0.5/0.5
+        -->
+        <type>fixed</type>
+
+        <relX>0.5</relX>		
+		<relY>0.5</relY>
+    </origin>
+	
+	<!-- custom global parameters -->
+	<global>
+	</global>
+	
+	<!-- custom body parameters -->
+	<body>
+	</body>
+	
+	<!-- custom fixture parameters -->
+	<fixture>
+		<parameter>
+			<name>density</name>
+			<displayName>Density</displayName>
+			<description>Sets the density of the collision shape.</description>
+			<shortDescription>Sets the density of the collision shape.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
+		<parameter>
+			<name>friction</name>
+			<displayName>Friction</displayName>
+			<description>Sets the friction of the collision shape.</description>
+			<shortDescription>Sets the friction of the collision shape.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
+		<parameter>
+			<name>restitution</name>
+			<displayName>Restitution</displayName>
+			<description>Sets the restitution of the collision shape.</description>
+			<shortDescription>Sets the restitution of the collision shape.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
+		<parameter>
+			<name>isSensor</name>
+			<displayName>Sensor</displayName>
+			<description>Sometimes game logic needs to know when two fixtures overlap yet there should be no collision response. This is done by using sensors. A sensor is a fixture that detects collision but does not produce a response.
+            You can flag any fixture as being a sensor. Sensors may be static or dynamic.</description>
+            <shortDescription>Is sensor?</shortDescription>
+			<type>bool</type>
+			<default>false</default>
+		</parameter>
+    </fixture>
+</exporter>
+

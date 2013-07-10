@@ -1,0 +1,19 @@
+<Sprite>
+    <Sprite.CollisionShapes> {% for body in bodies %} {% for fixture in body.fixtures %} {% if fixture.isCircle %}
+        <Circle {% if fixture.density %}
+        	Density="{{fixture.density}}" {% endif %} {% if fixture.friction %}
+        	Friction="{{fixture.friction}}" {% endif %} {% if fixture.restitution %}
+        	Restitution="{{fixture.restitution}}" {% endif %} {% if fixture.isSensor %}
+        	Sensor="{{fixture.isSensor}}" {% endif %}
+        	Offset="{{fixture.center.x|floatformat}} {{fixture.center.y|floatformat}}"
+            Radius="{{fixture.radius|floatformat}}" /> {% else %} {% for polygon in fixture.polygons %} {% if fixture.density or fixture.friction or fixture.restitution or fixture.isSensor %}
+        <Polygon {% if fixture.density %}
+            Density="{{fixture.density}}" {% endif %} {% if fixture.friction %}
+            Friction="{{fixture.friction}}" {% endif %} {% if fixture.restitution %}
+            Restitution="{{fixture.restitution}}" {% endif %} {% if fixture.isSensor %}
+            Sensor="{{fixture.isSensor}}"> {% endif %} {% else %}
+		<Polygon> {% endif %} {% for point in polygon %}
+			<Point>{{point.x|floatformat}} {{point.y|floatformat}}</Point> {% endfor %}
+		</Polygon> {% endfor %} {% endif %} {% endfor %} {% endfor %}
+    </Sprite.CollisionShapes>
+</Sprite>
