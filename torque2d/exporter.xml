@@ -48,6 +48,30 @@
 	
 	<!-- custom global parameters -->
 	<global>
+		<parameter>
+			<name>imageAssetId</name>
+			<displayName>ImageAsset ID</displayName>
+			<description>Specifies the ImageAsset to be used for the object.</description>
+			<shortDescription>Specifies the ImageAsset to be used for the object.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
+		<parameter>
+			<name>frame</name>
+			<displayName>Frame</displayName>
+			<description>Sets the object to use the specified image frame from the ImageAsset.</description>
+			<shortDescription>Sets the frame to use.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
+		<parameter>
+			<name>size</name>
+			<displayName>Size</displayName>
+			<description>Sets the object's size. Enter both the X and Y values into this field, seperated by a space.</description>
+			<shortDescription>Sets the object's size.</shortDescription>
+			<type>string</type>
+			<default></default>
+		</parameter>
 	</global>
 	
 	<!-- custom body parameters -->
@@ -83,9 +107,8 @@
 		<parameter>
 			<name>isSensor</name>
 			<displayName>Sensor</displayName>
-			<description>Sometimes game logic needs to know when two fixtures overlap yet there should be no collision response. This is done by using sensors. A sensor is a fixture that detects collision but does not produce a response.
-            You can flag any fixture as being a sensor. Sensors may be static or dynamic.</description>
-            <shortDescription>Is sensor?</shortDescription>
+			<description>A sensor is a fixture that detects collision but does not produce a response.</description>
+            <shortDescription>Sets whether the collision shape is a sensor or not.</shortDescription>
 			<type>bool</type>
 			<default>false</default>
 		</parameter>

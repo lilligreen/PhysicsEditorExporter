@@ -1,4 +1,9 @@
-<Sprite>
+{% if global.imageAssetId or global.frame or global.size %}
+<Sprite {% if global.imageAssetId %}
+    Image="{{global.imageAssetId}}" {% endif %} {% if global.frame %}
+    Frame="{{global.frame}}" {% endif %} {% if global.size %}
+    Size="{{global.size}}"> {% endif %} {% else %}
+<Sprite> {% endif %}
     <Sprite.CollisionShapes> {% for body in bodies %} {% for fixture in body.fixtures %} {% if fixture.isCircle %}
         <Circle {% if fixture.density %}
         	Density="{{fixture.density}}" {% endif %} {% if fixture.friction %}
